@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>在巴黎街头，我想起了深圳 — MarsWei</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .article-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 249, 247, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .back-link {
+      font-size: 0.875rem;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--ink); }
+
+    .article-page { padding-top: 100px; padding-bottom: 6rem; }
+    .article-header { margin-bottom: 3rem; }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.05em;
+    }
+    .article-meta .tag { color: var(--accent); text-transform: uppercase; }
+    .article-page h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .article-lead {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--ink-light);
+      font-style: italic;
+      line-height: 1.8;
+      border-left: 3px solid var(--accent-light);
+      padding-left: 1.2rem;
+      margin: 2rem 0;
+    }
+    .article-body {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--ink);
+      line-height: 2;
+    }
+    .article-body p + p { margin-top: 1.5rem; }
+    .article-body h2 {
+      font-size: 1.3rem;
+      margin: 2.5rem 0 1rem;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="article-nav">
+    <div class="article-nav-inner">
+      <a href="../index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        MarsWei
+      </a>
+    </div>
+  </nav>
+
+  <div class="article-page">
+    <div class="container">
+      <header class="article-header">
+        <div class="article-meta">
+          <span class="tag">旅行</span>
+          <span>2026年4月1日</span>
+        </div>
+        <h1>在巴黎街头，我想起了深圳</h1>
+      </header>
+
+      <p class="article-lead">
+        两座城市，一个以历史定义自己，一个以速度证明自己。走在奥斯曼大道上，我突然理解了城市规划对人心理的塑造。
+      </p>
+
+      <div class="article-body">
+        <p>
+          第一次来巴黎是2007年，那时候我刚考上北京的大学，还没离开过中国。第二次是读书，住在蒙帕纳斯附近一间六楼的小屋子，没有电梯，冬天没有暖气。现在是第三次，我已经在深圳生活了八年，然后又走了两年。
+        </p>
+        <p>
+          站在奥斯曼大道上，我意识到这条路和深圳的深南大道有一种奇怪的相似——都是宽阔的、笔直的、刻意的。但感受完全不同。走在深南大道上，你会感到一种向前冲的压力，仿佛停下来就是落后；走在奥斯曼大道上，你感到的是一种被注视的感觉，一种布景的庄重。
+        </p>
+
+        <h2>城市是一种论点</h2>
+        <p>
+          奥斯曼男爵在1853年开始改造巴黎，拆掉中世纪的迷宫小巷，建造宽阔的林荫大道。目的之一，是让军队可以快速穿越市区镇压起义。这段历史很少被旅游手册提起。
+        </p>
+        <p>
+          深圳则是另一种论点。它想证明一个城市可以在四十年内从渔村变成一线城市。它成功了，但这个速度的代价，是没有人真正属于这里。每个人都是过客，包括在那里生活了八年的我。
+        </p>
+        <p>
+          这也许就是为什么，巴黎让人感到沉重，而深圳让人感到焦虑。一个城市背负太多过去，另一个城市没有足够的过去。
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
