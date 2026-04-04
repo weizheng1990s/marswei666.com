@@ -93,37 +93,12 @@ a { color: inherit; text-decoration: none; }
 .social-link:hover { color: var(--accent); }
 .social-link svg { width: 13px; height: 13px; }
 
-/* Lang toggle — fixed top right */
-.lang-toggle-fixed {
-  position: fixed;
-  top: 1.1rem;
-  right: 1.5rem;
-  z-index: 200;
-}
 
-.lang-toggle {
-  display: inline-flex;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
-  margin-top: 1rem;
-  background: var(--bg);
-}
-.lang-toggle button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 3px 12px;
-  font-size: 0.72rem;
-  color: var(--ink-muted);
-  font-family: var(--font-sans);
-  transition: all var(--transition);
-  letter-spacing: 0.05em;
-}
-.lang-toggle button.active {
-  background: var(--accent);
-  color: #f5ede2;
-  font-weight: 600;
+/* ===== Video section (bottom of sidebar) ===== */
+.sidebar-video {
+  flex-shrink: 0;
+  padding: 1rem 0 1.75rem;
+  border-top: 1px solid var(--border);
 }
 
 /* ===== Article List ===== */

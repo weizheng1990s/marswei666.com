@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MarsWei</title>
-  <meta name="description" content="MarsWei 的个人网站 — 读书、写作、旅行与社会观察" />
+  <meta name="description" content="MarsWei — An Earth story collector. Writing about travel, books, and society." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
@@ -12,45 +12,19 @@
 </head>
 <body>
 
-  <!-- ===== Language Toggle (fixed top-right) ===== -->
-  <div class="lang-toggle-fixed">
-    <div class="lang-toggle">
-      <button data-switch="zh" class="active">中文</button>
-      <button data-switch="en">EN</button>
-    </div>
-  </div>
-
   <!-- ===== Sidebar ===== -->
   <aside class="sidebar">
     <div class="sidebar-header">
       <div class="site-name">MarsWei</div>
 
-      <div class="bio-tagline">
-        <span data-lang="zh">地球故事记录爱好者</span>
-        <span data-lang="en">An Earth story collector</span>
-      </div>
+      <div class="bio-tagline">An Earth story collector</div>
 
       <div class="bio-lines">
-        <span class="bio-line">
-          <span data-lang="zh">通四门语言：中文 · English · Français · 日本語</span>
-          <span data-lang="en">Four languages: Chinese · English · Français · 日本語</span>
-        </span>
-        <span class="bio-line">
-          <span data-lang="zh">北京巴黎上学 7 年</span>
-          <span data-lang="en">7 years studying in Beijing &amp; Paris</span>
-        </span>
-        <span class="bio-line">
-          <span data-lang="zh">深圳华为腾讯 8 年</span>
-          <span data-lang="en">8 years at Huawei &amp; Tencent in Shenzhen</span>
-        </span>
-        <span class="bio-line">
-          <span data-lang="zh">环球拜访熟人 2 年</span>
-          <span data-lang="en">2 years traversing the globe</span>
-        </span>
-        <span class="bio-line">
-          <span data-lang="zh">探索好奇满足 1 生</span>
-          <span data-lang="en">A lifetime driven by curiosity</span>
-        </span>
+        <span class="bio-line">Four languages: Chinese · English · Français · 日本語</span>
+        <span class="bio-line">7 years studying in Beijing &amp; Paris</span>
+        <span class="bio-line">8 years at Huawei &amp; Tencent in Shenzhen</span>
+        <span class="bio-line">2 years traversing the globe</span>
+        <span class="bio-line">A lifetime driven by curiosity</span>
       </div>
 
       <a href="https://x.com/marswei666" target="_blank" rel="noopener" class="social-link">
@@ -59,53 +33,35 @@
         </svg>
         @marswei666
       </a>
-
     </div>
 
     <!-- Article list -->
     <nav class="sidebar-articles">
-      <div class="articles-section-label">
-        <span data-lang="zh">文章</span>
-        <span data-lang="en">Writing</span>
-      </div>
+      <div class="articles-section-label">Writing</div>
 
       <div class="article-item active" data-article="0">
-        <div class="article-item-tag">
-          <span data-lang="zh">旅行</span>
-          <span data-lang="en">Travel</span>
-        </div>
-        <div class="article-item-title">
-          <span data-lang="zh">在巴黎街头，我想起了深圳</span>
-          <span data-lang="en">On the Streets of Paris, I Thought of Shenzhen</span>
-        </div>
+        <div class="article-item-tag">Travel</div>
+        <div class="article-item-title">On the Streets of Paris, I Thought of Shenzhen</div>
         <div class="article-item-date">2026 · 04 · 01</div>
       </div>
 
       <div class="article-item" data-article="1">
-        <div class="article-item-tag">
-          <span data-lang="zh">读书</span>
-          <span data-lang="en">Reading</span>
-        </div>
-        <div class="article-item-title">
-          <span data-lang="zh">读《人类简史》：我们是故事动物</span>
-          <span data-lang="en">Reading Sapiens: We Are Storytelling Animals</span>
-        </div>
+        <div class="article-item-tag">Reading</div>
+        <div class="article-item-title">Reading Sapiens: We Are Storytelling Animals</div>
         <div class="article-item-date">2026 · 03 · 15</div>
       </div>
 
       <div class="article-item" data-article="2">
-        <div class="article-item-tag">
-          <span data-lang="zh">社会观察</span>
-          <span data-lang="en">Society</span>
-        </div>
-        <div class="article-item-title">
-          <span data-lang="zh">互联网大厂离职之后</span>
-          <span data-lang="en">After Leaving Big Tech</span>
-        </div>
+        <div class="article-item-tag">Society</div>
+        <div class="article-item-title">After Leaving Big Tech</div>
         <div class="article-item-date">2026 · 02 · 28</div>
       </div>
 
     </nav>
+
+    <div class="sidebar-video">
+      <div class="articles-section-label">Video</div>
+    </div>
   </aside>
 
   <!-- ===== Main Content ===== -->
@@ -114,147 +70,72 @@
     <!-- Article 0 -->
     <article class="article-view active" data-article="0">
       <div class="article-view-meta">
-        <span class="article-view-tag">
-          <span data-lang="zh">旅行</span>
-          <span data-lang="en">Travel</span>
-        </span>
-        <span class="article-view-date">
-          <span data-lang="zh">2026年4月1日</span>
-          <span data-lang="en">April 1, 2026</span>
-        </span>
+        <span class="article-view-tag">Travel</span>
+        <span class="article-view-date">April 1, 2026</span>
       </div>
 
-      <h1>
-        <span data-lang="zh">在巴黎街头，我想起了深圳</span>
-        <span data-lang="en">On the Streets of Paris, I Thought of Shenzhen</span>
-      </h1>
+      <h1>On the Streets of Paris, I Thought of Shenzhen</h1>
 
       <p class="article-lead">
-        <span data-lang="zh">两座城市，一个以历史定义自己，一个以速度证明自己。走在奥斯曼大道上，我突然理解了城市规划对人心理的塑造。</span>
-        <span data-lang="en">Two cities — one defined by history, the other proven by speed. Walking along Boulevard Haussmann, I suddenly understood how urban planning shapes the human mind.</span>
+        Two cities — one defined by history, the other proven by speed. Walking along Boulevard Haussmann, I suddenly understood how urban planning shapes the human mind.
       </p>
 
       <div class="article-body">
-        <p>
-          <span data-lang="zh">第一次来巴黎是2007年，那时候我刚考上北京的大学，还没离开过中国。第二次是读书，住在蒙帕纳斯附近一间六楼的小屋子，没有电梯，冬天没有暖气。现在是第三次，我已经在深圳生活了八年，然后又走了两年。</span>
-          <span data-lang="en">My first time in Paris was 2007, when I had just been admitted to a university in Beijing and had never left China. The second time was for school — I lived on the sixth floor of a small room near Montparnasse, no elevator, no heating in winter. Now it's the third time. I've lived in Shenzhen for eight years, then wandered for two more.</span>
-        </p>
-        <p>
-          <span data-lang="zh">站在奥斯曼大道上，我意识到这条路和深圳的深南大道有一种奇怪的相似——都是宽阔的、笔直的、刻意的。但感受完全不同。走在深南大道上，你会感到一种向前冲的压力，仿佛停下来就是落后；走在奥斯曼大道上，你感到的是一种被注视的感觉，一种布景的庄重。</span>
-          <span data-lang="en">Standing on Boulevard Haussmann, I noticed a strange resemblance to Shenzhen's Shennan Avenue — both wide, straight, deliberate. But the feeling is completely different. Walking down Shennan Avenue, you feel a pressure to push forward, as if stopping means falling behind. On Haussmann, you feel watched, staged — a certain grandeur of backdrop.</span>
-        </p>
+        <p>My first time in Paris was 2007, when I had just been admitted to a university in Beijing and had never left China. The second time was for school — I lived on the sixth floor of a small room near Montparnasse, no elevator, no heating in winter. Now it's the third time. I've lived in Shenzhen for eight years, then wandered for two more.</p>
+        <p>Standing on Boulevard Haussmann, I noticed a strange resemblance to Shenzhen's Shennan Avenue — both wide, straight, deliberate. But the feeling is completely different. Walking down Shennan Avenue, you feel a pressure to push forward, as if stopping means falling behind. On Haussmann, you feel watched, staged — a certain grandeur of backdrop.</p>
 
-        <h2>
-          <span data-lang="zh">城市是一种论点</span>
-          <span data-lang="en">A City Is an Argument</span>
-        </h2>
+        <h2>A City Is an Argument</h2>
 
-        <p>
-          <span data-lang="zh">奥斯曼男爵在1853年开始改造巴黎，拆掉中世纪的迷宫小巷，建造宽阔的林荫大道。目的之一，是让军队可以快速穿越市区镇压起义。这段历史很少被旅游手册提起。</span>
-          <span data-lang="en">Baron Haussmann began renovating Paris in 1853, tearing down medieval alleyways to build wide boulevards. One purpose was to allow troops to move quickly through the city to suppress uprisings. This history rarely appears in travel guides.</span>
-        </p>
-        <p>
-          <span data-lang="zh">深圳则是另一种论点。它想证明一个城市可以在四十年内从渔村变成一线城市。它成功了，但这个速度的代价，是没有人真正属于这里。每个人都是过客，包括在那里生活了八年的我。</span>
-          <span data-lang="en">Shenzhen is a different kind of argument. It wants to prove a city can go from fishing village to first-tier metropolis in forty years. It succeeded — but the cost of that speed is that nobody truly belongs here. Everyone is a passerby, including me, who lived there for eight years.</span>
-        </p>
-        <p>
-          <span data-lang="zh">这也许就是为什么，巴黎让人感到沉重，而深圳让人感到焦虑。一个城市背负太多过去，另一个城市没有足够的过去。</span>
-          <span data-lang="en">Maybe that's why Paris feels heavy, and Shenzhen feels anxious. One city carries too much past; the other doesn't have enough.</span>
-        </p>
+        <p>Baron Haussmann began renovating Paris in 1853, tearing down medieval alleyways to build wide boulevards. One purpose was to allow troops to move quickly through the city to suppress uprisings. This history rarely appears in travel guides.</p>
+        <p>Shenzhen is a different kind of argument. It wants to prove a city can go from fishing village to first-tier metropolis in forty years. It succeeded — but the cost of that speed is that nobody truly belongs here. Everyone is a passerby, including me, who lived there for eight years.</p>
+        <p>Maybe that's why Paris feels heavy, and Shenzhen feels anxious. One city carries too much past; the other doesn't have enough.</p>
       </div>
     </article>
 
     <!-- Article 1 -->
     <article class="article-view" data-article="1">
       <div class="article-view-meta">
-        <span class="article-view-tag">
-          <span data-lang="zh">读书</span>
-          <span data-lang="en">Reading</span>
-        </span>
-        <span class="article-view-date">
-          <span data-lang="zh">2026年3月15日</span>
-          <span data-lang="en">March 15, 2026</span>
-        </span>
+        <span class="article-view-tag">Reading</span>
+        <span class="article-view-date">March 15, 2026</span>
       </div>
 
-      <h1>
-        <span data-lang="zh">读《人类简史》：我们是故事动物</span>
-        <span data-lang="en">Reading Sapiens: We Are Storytelling Animals</span>
-      </h1>
+      <h1>Reading Sapiens: We Are Storytelling Animals</h1>
 
       <p class="article-lead">
-        <span data-lang="zh">赫拉利说，让智人统治世界的，不是工具，而是讲故事的能力。这让我重新审视自己每天消费的那些叙事。</span>
-        <span data-lang="en">Harari argues it wasn't tools but storytelling that gave Sapiens dominion over the world. This made me re-examine the narratives I consume every day.</span>
+        Harari argues it wasn't tools but storytelling that gave Sapiens dominion over the world. This made me re-examine the narratives I consume every day.
       </p>
 
       <div class="article-body">
-        <p>
-          <span data-lang="zh">我在东京的一家咖啡馆里读完了《人类简史》的最后一章。窗外是涩谷的人流，密集而有秩序，每个人都在扮演某个故事里的角色。</span>
-          <span data-lang="en">I finished the last chapter of Sapiens in a coffee shop in Tokyo. Outside the window, the crowds of Shibuya moved with dense precision — each person playing a role in some story.</span>
-        </p>
-        <p>
-          <span data-lang="zh">赫拉利的核心论点是：智人之所以能在众多人类物种中胜出，是因为我们能够相信并传播"虚构的故事"——国家、货币、公司、宗教，这些都是集体想象的产物。七万年前，我们学会了讲故事，从此没有什么能阻止我们。</span>
-          <span data-lang="en">Harari's core argument: Sapiens prevailed among human species because we can believe and spread "fictional stories" — nations, money, companies, religions, all products of collective imagination. Seventy thousand years ago, we learned to tell stories, and nothing has stopped us since.</span>
-        </p>
+        <p>I finished the last chapter of Sapiens in a coffee shop in Tokyo. Outside the window, the crowds of Shibuya moved with dense precision — each person playing a role in some story.</p>
+        <p>Harari's core argument: Sapiens prevailed among human species because we can believe and spread "fictional stories" — nations, money, companies, religions, all products of collective imagination. Seventy thousand years ago, we learned to tell stories, and nothing has stopped us since.</p>
 
-        <h2>
-          <span data-lang="zh">我们活在别人的故事里</span>
-          <span data-lang="en">We Live Inside Other People's Stories</span>
-        </h2>
+        <h2>We Live Inside Other People's Stories</h2>
 
-        <p>
-          <span data-lang="zh">读这本书让我开始审视：我每天消费的内容，哪些是事实，哪些是精心构建的叙事？新闻、社交媒体、公司战略，都是故事。问题不是故事本身，而是我有没有意识到自己在听故事。</span>
-          <span data-lang="en">Reading this book made me examine: of everything I consume daily, what is fact, and what is carefully constructed narrative? News, social media, corporate strategy — all stories. The question isn't the story itself, but whether I'm aware I'm being told one.</span>
-        </p>
+        <p>Reading this book made me examine: of everything I consume daily, what is fact, and what is carefully constructed narrative? News, social media, corporate strategy — all stories. The question isn't the story itself, but whether I'm aware I'm being told one.</p>
       </div>
     </article>
 
     <!-- Article 2 -->
     <article class="article-view" data-article="2">
       <div class="article-view-meta">
-        <span class="article-view-tag">
-          <span data-lang="zh">社会观察</span>
-          <span data-lang="en">Society</span>
-        </span>
-        <span class="article-view-date">
-          <span data-lang="zh">2026年2月28日</span>
-          <span data-lang="en">February 28, 2026</span>
-        </span>
+        <span class="article-view-tag">Society</span>
+        <span class="article-view-date">February 28, 2026</span>
       </div>
 
-      <h1>
-        <span data-lang="zh">互联网大厂离职之后</span>
-        <span data-lang="en">After Leaving Big Tech</span>
-      </h1>
+      <h1>After Leaving Big Tech</h1>
 
       <p class="article-lead">
-        <span data-lang="zh">华为和腾讯教会了我什么，又让我付出了什么代价。当我终于停下来，才发现那 8 年在我身上留下的印记。</span>
-        <span data-lang="en">What Huawei and Tencent taught me, and what it cost. When I finally stopped, I saw the marks those 8 years had left on me.</span>
+        What Huawei and Tencent taught me, and what it cost. When I finally stopped, I saw the marks those 8 years had left on me.
       </p>
 
       <div class="article-body">
-        <p>
-          <span data-lang="zh">离职的那天下午，我坐在深圳湾公园的长椅上，看着海。脑子里转的不是自由，而是：明天不用开早会了，这件事本身让我感到一种奇怪的空洞。</span>
-          <span data-lang="en">The afternoon I left, I sat on a bench at Shenzhen Bay Park, watching the sea. What ran through my mind wasn't freedom — it was: no morning standup tomorrow. That thought alone left a strange hollow feeling.</span>
-        </p>
-        <p>
-          <span data-lang="zh">八年的大厂生活给了我很多：解决复杂问题的方法论，在混乱中保持结构的能力，以及一种对规模的直觉感知。但它也悄悄带走了一些东西：慢慢思考的习惯，做"没有用"的事情的勇气，以及对无聊的容忍。</span>
-          <span data-lang="en">Eight years in big tech gave me a lot: methodology for solving complex problems, the ability to maintain structure in chaos, and an intuitive sense of scale. But it also quietly took things away: the habit of slow thought, the courage to do "useless" things, and tolerance for boredom.</span>
-        </p>
+        <p>The afternoon I left, I sat on a bench at Shenzhen Bay Park, watching the sea. What ran through my mind wasn't freedom — it was: no morning standup tomorrow. That thought alone left a strange hollow feeling.</p>
+        <p>Eight years in big tech gave me a lot: methodology for solving complex problems, the ability to maintain structure in chaos, and an intuitive sense of scale. But it also quietly took things away: the habit of slow thought, the courage to do "useless" things, and tolerance for boredom.</p>
 
-        <h2>
-          <span data-lang="zh">效率是一种成瘾</span>
-          <span data-lang="en">Efficiency Is an Addiction</span>
-        </h2>
+        <h2>Efficiency Is an Addiction</h2>
 
-        <p>
-          <span data-lang="zh">大厂训练你把一切都转化为可量化的结果。这很有用，但长期下来，你会开始用同样的逻辑衡量生活的每一分钟。散步有什么产出？读闲书的 ROI 是多少？这种思维方式很难关掉。</span>
-          <span data-lang="en">Big tech trains you to convert everything into quantifiable outcomes. That's useful — but over time you start applying the same logic to every minute of life. What's the output of a walk? What's the ROI of reading fiction? That mode of thinking is hard to turn off.</span>
-        </p>
-        <p>
-          <span data-lang="zh">离开之后，我花了将近半年才重新学会"什么都不做"。这不是懒惰，而是让大脑有机会产生真正属于自己的想法，而不是响应别人的需求。</span>
-          <span data-lang="en">After leaving, it took me nearly six months to relearn how to "do nothing." Not laziness — but giving the brain a chance to generate thoughts that were truly its own, rather than responses to someone else's needs.</span>
-        </p>
+        <p>Big tech trains you to convert everything into quantifiable outcomes. That's useful — but over time you start applying the same logic to every minute of life. What's the output of a walk? What's the ROI of reading fiction? That mode of thinking is hard to turn off.</p>
+        <p>After leaving, it took me nearly six months to relearn how to "do nothing." Not laziness — but giving the brain a chance to generate thoughts that were truly its own, rather than responses to someone else's needs.</p>
       </div>
     </article>
 
