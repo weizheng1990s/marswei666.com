@@ -14,6 +14,43 @@
 </head>
 <body>
 
+  <!-- ===== Music Player Bar ===== -->
+  <div class="player-bar" id="playerBar">
+    <div class="player-track-info">
+      <span class="player-note">♪</span>
+      <span class="player-track-name" id="playerTrackName">Energy Flow</span>
+    </div>
+    <div class="player-controls">
+      <button class="player-btn" id="playerPrev" title="Previous">&#9664;&#9664;</button>
+      <button class="player-btn player-btn-play" id="playerPlay" title="Play / Pause">&#9654;</button>
+      <button class="player-btn" id="playerNext" title="Next">&#9654;&#9654;</button>
+    </div>
+    <div class="player-progress-area">
+      <span class="player-time" id="playerCurrentTime">0:00</span>
+      <div class="player-progress-bar" id="playerProgressBar">
+        <div class="player-progress-fill" id="playerProgressFill"></div>
+      </div>
+      <span class="player-time" id="playerDuration">0:00</span>
+    </div>
+    <button class="player-mode-btn" id="playerMode" title="Loop">↻</button>
+
+    <!-- Playlist dropdown -->
+    <div class="player-playlist-wrap" id="playerPlaylistWrap">
+      <button class="player-playlist-btn" id="playerPlaylistBtn" title="Playlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="15" y2="18"/>
+          <circle cx="20" cy="18" r="2"/>
+        </svg>
+      </button>
+      <ul class="player-playlist" id="playerPlaylist"></ul>
+    </div>
+  </div>
+
+  <!-- ===== Content Area ===== -->
+  <div class="content-area">
+
   <!-- ===== Sidebar ===== -->
   <aside class="sidebar">
     <div class="sidebar-header">
@@ -1109,6 +1146,8 @@
 
   </main>
 
-  <script src="js/main.js?v=4"></script>
+  </div><!-- /.content-area -->
+
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>
