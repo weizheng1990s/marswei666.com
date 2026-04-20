@@ -9,37 +9,37 @@ function initArticles() {
   const main  = document.querySelector('.main');
   const backBtn = document.getElementById('backBtn');
 
-  // Activate an article by id; pushHistory=true updates the URL
-  function activateArticle(id, pushHistory) {
-    const item = document.querySelector(`.article-item[data-article="${id}"]`);
-    if (!item) return;
-
-    items.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-    views.forEach(v => v.classList.toggle('active', v.dataset.article === id));
-
-    if (pushHistory) {
-      history.pushState({ article: id }, '', '#' + id);
-    }
-  }
-
-  // On page load: set initial URL to the default active article
+  // Set initial URL to the default active article
   const defaultActive = document.querySelector('.article-item.active');
-  if (defaultActive && !location.hash) {
+  if (defaultActive) {
     history.replaceState({ article: defaultActive.dataset.article }, '', '#' + defaultActive.dataset.article);
   }
 
-  // On page load: if URL already has a hash, activate that article
+  // Restore article from URL hash on page load
   if (location.hash) {
     const id = location.hash.slice(1);
-    activateArticle(id, false);
-    if (isMobile()) document.body.classList.add('show-article');
+    const target = document.querySelector(`.article-item[data-article="${id}"]`);
+    if (target) {
+      items.forEach(i => i.classList.remove('active'));
+      target.classList.add('active');
+      views.forEach(v => v.classList.toggle('active', v.dataset.article === id));
+      if (isMobile()) document.body.classList.add('show-article');
+    }
   }
 
   items.forEach(item => {
     item.addEventListener('click', () => {
       const id = item.dataset.article;
-      activateArticle(id, true);
+
+      // Update URL immediately
+      history.pushState({ article: id }, '', '#' + id);
+
+      // Update sidebar
+      items.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+
+      // Update article view
+      views.forEach(v => v.classList.toggle('active', v.dataset.article === id));
 
       if (isMobile()) {
         document.body.classList.add('show-article');
@@ -55,26 +55,26 @@ function initArticles() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // "← Writing" button
   backBtn.addEventListener('click', () => history.back());
 
-  // Browser back/forward
   window.addEventListener('popstate', e => {
     if (isMobile()) {
       if (document.body.classList.contains('show-article')) {
         goBack();
       }
     } else {
-      // Desktop: restore whichever article the URL points to
       const id = e.state?.article || location.hash.slice(1);
       if (id) {
-        activateArticle(id, false);
+        items.forEach(i => i.classList.remove('active'));
+        views.forEach(v => v.classList.toggle('active', v.dataset.article === id));
+        const target = document.querySelector(`.article-item[data-article="${id}"]`);
+        if (target) target.classList.add('active');
         main.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
   });
 
-  // Mobile swipe detection
+  // Mobile swipe
   let touchStartX = 0;
   let touchStartY = 0;
 
