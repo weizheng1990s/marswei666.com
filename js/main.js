@@ -36,7 +36,7 @@ function initArticles() {
 
   backBtn.addEventListener('click', goBack);
 
-  // Swipe right to go back on mobile
+  // Swipe left or right to go back on mobile
   let touchStartX = 0;
   let touchStartY = 0;
 
@@ -45,9 +45,17 @@ function initArticles() {
     touchStartY = e.touches[0].clientY;
   }, { passive: true });
 
+  // Intercept horizontal swipes so Chrome doesn't handle them as browser navigation
+  document.addEventListener('touchmove', e => {
+    if (!document.body.classList.contains('show-article')) return;
+    const dx = Math.abs(e.touches[0].clientX - touchStartX);
+    const dy = Math.abs(e.touches[0].clientY - touchStartY);
+    if (dx > dy && dx > 10) e.preventDefault();
+  }, { passive: false });
+
   document.addEventListener('touchend', e => {
     if (!document.body.classList.contains('show-article')) return;
-    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
     const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
     if (dx > 60 && dy < 80) goBack();
   }, { passive: true });
