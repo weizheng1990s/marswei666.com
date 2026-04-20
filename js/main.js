@@ -6,8 +6,7 @@ function isMobile() {
 function initArticles() {
   const items = document.querySelectorAll('.sidebar-articles .article-item');
   const views = document.querySelectorAll('.main .article-view');
-  const main = document.querySelector('.main');
-  const sidebar = document.querySelector('.sidebar');
+  const main  = document.querySelector('.main');
   const backBtn = document.getElementById('backBtn');
 
   items.forEach(item => {
@@ -22,8 +21,7 @@ function initArticles() {
       });
 
       if (isMobile()) {
-        sidebar.classList.add('mobile-hidden');
-        main.classList.add('mobile-visible');
+        document.body.classList.add('show-article');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         main.scrollTo({ top: 0, behavior: 'smooth' });
@@ -32,8 +30,7 @@ function initArticles() {
   });
 
   backBtn.addEventListener('click', () => {
-    main.classList.remove('mobile-visible');
-    sidebar.classList.remove('mobile-hidden');
+    document.body.classList.remove('show-article');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }

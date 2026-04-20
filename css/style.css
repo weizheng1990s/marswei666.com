@@ -233,10 +233,8 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
 }
 
-/* ===== Back button (mobile only) ===== */
-.back-btn {
-  display: none;
-}
+/* ===== Back button (hidden on desktop) ===== */
+.back-btn { display: none; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
@@ -249,16 +247,14 @@ a { color: inherit; text-decoration: none; }
   }
   .sidebar-articles { max-height: none; }
 
-  .main {
-    display: none;
-    height: auto;
-  }
-  .main.mobile-visible {
-    display: block;
-  }
-  .sidebar.mobile-hidden {
-    display: none;
-  }
+  .main { height: auto; }
+
+  /* Default mobile state: show sidebar, hide article content */
+  body:not(.show-article) .main { display: none; }
+
+  /* Article reading state: hide sidebar, show article content */
+  body.show-article .sidebar { display: none; }
+  body.show-article .main { display: block; }
 
   .back-btn {
     display: block;
