@@ -9,13 +9,7 @@ function initArticles() {
   const main  = document.querySelector('.main');
   const backBtn = document.getElementById('backBtn');
 
-  // Set initial URL to the default active article
-  const defaultActive = document.querySelector('.article-item.active');
-  if (defaultActive) {
-    history.replaceState({ article: defaultActive.dataset.article }, '', '#' + defaultActive.dataset.article);
-  }
-
-  // Restore article from URL hash on page load
+  // Restore article from URL hash if page was loaded with one (e.g. shared link)
   if (location.hash) {
     const id = location.hash.slice(1);
     const target = document.querySelector(`.article-item[data-article="${id}"]`);
@@ -31,7 +25,7 @@ function initArticles() {
     item.addEventListener('click', () => {
       const id = item.dataset.article;
 
-      // Update URL immediately
+      // Update URL
       history.pushState({ article: id }, '', '#' + id);
 
       // Update sidebar
@@ -50,17 +44,21 @@ function initArticles() {
     });
   });
 
+  // Go back to article list: update UI + clean hash from URL, never exit the site
   function goBack() {
     document.body.classList.remove('show-article');
+    history.replaceState(null, '', location.pathname);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  backBtn.addEventListener('click', () => history.back());
+  backBtn.addEventListener('click', goBack);
 
+  // Browser native back button (desktop/mobile)
   window.addEventListener('popstate', e => {
     if (isMobile()) {
       if (document.body.classList.contains('show-article')) {
-        goBack();
+        document.body.classList.remove('show-article');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } else {
       const id = e.state?.article || location.hash.slice(1);
@@ -74,7 +72,7 @@ function initArticles() {
     }
   });
 
-  // Mobile swipe
+  // Mobile swipe to go back
   let touchStartX = 0;
   let touchStartY = 0;
 
@@ -87,7 +85,7 @@ function initArticles() {
     if (!document.body.classList.contains('show-article')) return;
     const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
     const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
-    if (dx > 60 && dy < 80) history.back();
+    if (dx > 60 && dy < 80) goBack();
   }, { passive: true });
 }
 
