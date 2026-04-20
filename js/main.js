@@ -162,6 +162,10 @@ function initMusicPlayer() {
   playlistBtn.addEventListener('click', e => {
     e.stopPropagation();
     playlistOpen = !playlistOpen;
+    if (!playlistOpen) {
+      playlistEl.style.transition = 'none';
+      setTimeout(() => { playlistEl.style.transition = ''; }, 50);
+    }
     playlistEl.classList.toggle('touch-open', playlistOpen);
   });
 
