@@ -9,24 +9,12 @@ function initArticles() {
   const main  = document.querySelector('.main');
   const backBtn = document.getElementById('backBtn');
 
-  // Restore article from URL hash if page was loaded with one (e.g. shared link)
-  if (location.hash) {
-    const id = location.hash.slice(1);
-    const target = document.querySelector(`.article-item[data-article="${id}"]`);
-    if (target) {
-      items.forEach(i => i.classList.remove('active'));
-      target.classList.add('active');
-      views.forEach(v => v.classList.toggle('active', v.dataset.article === id));
-      if (isMobile()) document.body.classList.add('show-article');
-    }
-  }
-
   items.forEach(item => {
     item.addEventListener('click', () => {
       const id = item.dataset.article;
 
-      // Update URL
-      history.pushState({ article: id }, '', '#' + id);
+      // Push a history entry (enables browser back), but keep URL unchanged
+      history.pushState({ article: id }, '', location.pathname);
 
       // Update sidebar
       items.forEach(i => i.classList.remove('active'));
@@ -44,24 +32,21 @@ function initArticles() {
     });
   });
 
-  // Go back to article list: update UI + clean hash from URL, never exit the site
   function goBack() {
     document.body.classList.remove('show-article');
-    history.replaceState(null, '', location.pathname);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   backBtn.addEventListener('click', goBack);
 
-  // Browser native back button (desktop/mobile)
+  // Browser native back button / Android back button
   window.addEventListener('popstate', e => {
     if (isMobile()) {
       if (document.body.classList.contains('show-article')) {
-        document.body.classList.remove('show-article');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        goBack();
       }
     } else {
-      const id = e.state?.article || location.hash.slice(1);
+      const id = e.state?.article;
       if (id) {
         items.forEach(i => i.classList.remove('active'));
         views.forEach(v => v.classList.toggle('active', v.dataset.article === id));
