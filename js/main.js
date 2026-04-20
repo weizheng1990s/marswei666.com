@@ -134,7 +134,7 @@ function initMusicPlayer() {
   function loadTrack(idx, autoPlay) {
     currentIndex = idx;
     audio.src = tracks[idx].file;
-    trackNameEl.textContent = tracks[idx].display;
+    trackNameEl.textContent = tracks[idx].title;
     progressFill.style.width = '0%';
     currentTimeEl.textContent = '0:00';
     durationEl.textContent = '0:00';
