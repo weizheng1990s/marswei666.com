@@ -84,6 +84,10 @@ function initMusicPlayer() {
     { file: 'music/风云-孤星独吟 (萧版).ogg',                                               display: '风云 — 孤星独吟',                      title: 'Lone Star Lament' },
     { file: 'music/日向敏文-End Title (Inst.).ogg',                                         display: '日向敏文 — End Title',                 title: 'End Title' },
     { file: 'music/James Horner-A Gift of a Thistle.ogg',                                  display: 'James Horner — A Gift of a Thistle',   title: 'A Gift of a Thistle' },
+    { file: 'music/Bruno Coulais-Morhange (口白).ogg',                                     display: 'Bruno Coulais — Morhange',             title: 'Morhange' },
+    { file: 'music/Cagnet-Silent Emotion.ogg',                                             display: 'Cagnet — Silent Emotion',              title: 'Silent Emotion' },
+    { file: 'music/纯音乐-思君黯然.ogg',                                                    display: '纯音乐 — 思君黯然',                    title: 'Pining in Silence' },
+    { file: 'music/日向敏文-Good Evening Heartache.ogg',                                   display: '日向敏文 — Good Evening Heartache',    title: 'Good Evening Heartache' },
   ];
 
   const MODES    = ['sequential', 'shuffle', 'single'];
