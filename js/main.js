@@ -35,6 +35,13 @@ function initArticles() {
   function goBack() {
     document.body.classList.remove('show-article');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Close playlist instantly
+    const pl = document.getElementById('playerPlaylist');
+    if (pl) {
+      pl.style.transition = 'none';
+      pl.classList.remove('touch-open');
+      setTimeout(() => { pl.style.transition = ''; }, 50);
+    }
   }
 
   backBtn.addEventListener('click', goBack);
