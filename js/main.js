@@ -29,10 +29,28 @@ function initArticles() {
     });
   });
 
-  backBtn.addEventListener('click', () => {
+  function goBack() {
     document.body.classList.remove('show-article');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  }
+
+  backBtn.addEventListener('click', goBack);
+
+  // Swipe right to go back on mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (!document.body.classList.contains('show-article')) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+    if (dx > 60 && dy < 80) goBack();
+  }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', initArticles);
