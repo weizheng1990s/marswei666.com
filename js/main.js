@@ -81,7 +81,7 @@ function initMusicPlayer() {
   const tracks = [
     { file: 'music/坂本龙一-energy flow.ogg',                                              display: '坂本龙一 — Energy Flow',              title: 'Energy Flow' },
     { file: 'music/坂本龙一,Jaques Morelenbaum,Judy Kang-Merry Christmas Mr. Lawrence.ogg', display: 'Sakamoto — Merry Christmas Mr. Lawrence', title: 'Merry Christmas Mr. Lawrence' },
-    { file: 'music/风云-孤星独吟 (萧版).ogg',                                               display: '风云 — 孤星独吟',                      title: '孤星独吟' },
+    { file: 'music/风云-孤星独吟 (萧版).ogg',                                               display: '风云 — 孤星独吟',                      title: 'Lone Star Lament' },
     { file: 'music/日向敏文-End Title (Inst.).ogg',                                         display: '日向敏文 — End Title',                 title: 'End Title' },
     { file: 'music/James Horner-A Gift of a Thistle.ogg',                                  display: 'James Horner — A Gift of a Thistle',   title: 'A Gift of a Thistle' },
   ];
