@@ -155,17 +155,14 @@ function initMusicPlayer() {
   const playlistBtn  = document.getElementById('playerPlaylistBtn');
   let playlistOpen = false;
 
-  function isTouchDevice() { return window.matchMedia('(hover: none)').matches; }
-
   playlistBtn.addEventListener('click', e => {
-    if (!isTouchDevice()) return;
     e.stopPropagation();
     playlistOpen = !playlistOpen;
     playlistEl.classList.toggle('touch-open', playlistOpen);
   });
 
   document.addEventListener('click', e => {
-    if (isTouchDevice() && playlistOpen && !playlistWrap.contains(e.target)) {
+    if (playlistOpen && !playlistWrap.contains(e.target)) {
       playlistOpen = false;
       playlistEl.classList.remove('touch-open');
     }
