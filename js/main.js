@@ -168,7 +168,9 @@ function initMusicPlayer() {
   document.addEventListener('click', e => {
     if (playlistOpen && !playlistWrap.contains(e.target)) {
       playlistOpen = false;
+      playlistEl.style.transition = 'opacity 0.1s, visibility 0s 0.1s';
       playlistEl.classList.remove('touch-open');
+      setTimeout(() => { playlistEl.style.transition = ''; }, 150);
     }
   });
 
