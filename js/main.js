@@ -21,7 +21,6 @@ function initArticles() {
       });
 
       if (isMobile()) {
-        // Push a history state so browser back gesture pops it instead of leaving the page
         if (!document.body.classList.contains('show-article')) {
           history.pushState({ showArticle: true }, '');
         }
@@ -38,15 +37,31 @@ function initArticles() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // "← Writing" button: trigger browser back, which fires popstate below
+  // "← Writing" button
   backBtn.addEventListener('click', () => history.back());
 
-  // Intercept browser back gesture / Android back button
+  // Browser back button / Android back button → popstate
   window.addEventListener('popstate', () => {
     if (document.body.classList.contains('show-article')) {
       goBack();
     }
   });
+
+  // Custom swipe detection (after overscroll-behavior-x:none blocks Chrome's gesture)
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  document.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (!document.body.classList.contains('show-article')) return;
+    const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+    if (dx > 60 && dy < 80) history.back(); // triggers popstate → goBack()
+  }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', initArticles);
