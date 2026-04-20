@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', initArticles);
 // ===== Music Player =====
 function initMusicPlayer() {
   const tracks = [
-    { file: 'music/坂本龙一-energy flow.ogg',                                              display: '坂本龙一 — Energy Flow' },
-    { file: 'music/坂本龙一,Jaques Morelenbaum,Judy Kang-Merry Christmas Mr. Lawrence.ogg', display: 'Sakamoto — Merry Christmas Mr. Lawrence' },
-    { file: 'music/风云-孤星独吟 (萧版).ogg',                                               display: '风云 — 孤星独吟' },
-    { file: 'music/日向敏文-End Title (Inst.).ogg',                                         display: '日向敏文 — End Title' },
-    { file: 'music/James Horner-A Gift of a Thistle.ogg',                                  display: 'James Horner — A Gift of a Thistle' },
+    { file: 'music/坂本龙一-energy flow.ogg',                                              display: '坂本龙一 — Energy Flow',              title: 'Energy Flow' },
+    { file: 'music/坂本龙一,Jaques Morelenbaum,Judy Kang-Merry Christmas Mr. Lawrence.ogg', display: 'Sakamoto — Merry Christmas Mr. Lawrence', title: 'Merry Christmas Mr. Lawrence' },
+    { file: 'music/风云-孤星独吟 (萧版).ogg',                                               display: '风云 — 孤星独吟',                      title: '孤星独吟' },
+    { file: 'music/日向敏文-End Title (Inst.).ogg',                                         display: '日向敏文 — End Title',                 title: 'End Title' },
+    { file: 'music/James Horner-A Gift of a Thistle.ogg',                                  display: 'James Horner — A Gift of a Thistle',   title: 'A Gift of a Thistle' },
   ];
 
   const MODES    = ['sequential', 'shuffle', 'single'];
@@ -145,7 +145,7 @@ function initMusicPlayer() {
   // Build playlist items
   tracks.forEach((t, i) => {
     const li = document.createElement('li');
-    li.textContent = t.display;
+    li.textContent = t.title;
     li.addEventListener('click', () => loadTrack(i, true));
     playlistEl.appendChild(li);
   });
